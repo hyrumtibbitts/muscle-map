@@ -25,8 +25,8 @@ Open http://localhost:3000. With no Supabase keys set, data is stored in the bro
 
 | Path | What it is |
 |------|-----------|
-| `data/muscles.json` | 31 muscle zones. Each `id` is one tap zone on the body map. |
-| `data/exercises.json` | 96 exercises with `primary_muscles`, `secondary_muscles`, and `aliases`. |
+| `data/muscles.json` | 32 muscle zones. Each `id` is one tap zone on the body map. |
+| `data/exercises.json` | 98 exercises with `primary_muscles`, `secondary_muscles`, and `aliases`. |
 | `supabase/migrations/0001_init.sql` | Tables, RLS policies, `muscle_status_on()` carry-forward function. |
 | `supabase/seed.sql` | Generated from the JSON. Safe to run more than once. |
 | `scripts/validate-data.mjs` | Checks the JSON for bad ids and duplicates. |
@@ -35,7 +35,7 @@ Open http://localhost:3000. With no Supabase keys set, data is stored in the bro
 | `src/lib/data/` | Loads the JSON and matches exercise names to ids. |
 | `src/lib/repo/` | Data access. `LocalRepo` (browser storage) now, `SupabaseRepo` later. |
 | `src/components/body-map/` | React Three Fiber body map. Zone color = status. Tap a zone to select it. |
-| `public/models/body.glb` | 31 tappable muscle zones + neutral filler + skeleton. ~1.5 MB, meshopt-compressed. |
+| `public/models/body.glb` | 32 tappable muscle zones + neutral filler + skeleton. ~1.5 MB, meshopt-compressed. |
 | `scripts/build-body-model.py` | Rebuilds `body.glb` from the source meshes (see Body model). |
 
 ## Database tables
@@ -72,7 +72,7 @@ The 3D body is built from real anatomy meshes, not a stylised figure.
 
 - Source data: [BodyParts3D](https://lifesciencedb.jp/bp3d/) © The Database Center for Life Science, licensed [CC BY-SA 2.1 JP](https://creativecommons.org/licenses/by-sa/2.1/jp/deed.en), and [Z-Anatomy](https://www.z-anatomy.com/) (CC BY-SA).
 - Both were decimated and aligned by [BodyExplorer](https://github.com/JohanBellander/BodyExplorer) (`anatomy.glb`, `skeleton.glb`, `mesh_mapping.json`).
-- `scripts/build-body-model.py` groups the 467 muscle meshes into the 31 zones in `data/muscles.json`, decimates each zone, adds a neutral filler layer and the skeleton, converts to metres / Y-up, and writes `public/models/body.glb`.
+- `scripts/build-body-model.py` groups the 467 muscle meshes into the 32 zones in `data/muscles.json`, decimates each zone, adds a neutral filler layer and the skeleton, converts to metres / Y-up, and writes `public/models/body.glb`.
 - `gltfpack -cc -kn` then compresses it with meshopt.
 
 `body.glb` is a derivative of CC BY-SA data. Keep the attribution in the app footer.

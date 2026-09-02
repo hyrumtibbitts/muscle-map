@@ -311,6 +311,16 @@
       "external_ids": {
         "biodigital": []
       }
+    },
+    {
+      "id": "neck",
+      "name": "Neck",
+      "group": "neck",
+      "view": "both",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
     }
   ]
 }

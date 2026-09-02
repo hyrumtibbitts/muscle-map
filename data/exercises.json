@@ -3,484 +3,1879 @@
   "description": "Exercise-to-muscle mapping. primary = muscles that drive the lift. secondary = muscles that assist or stabilize.",
   "muscle_ids_source": "./muscles.json",
   "exercises": [
-    { "id": "back-squat", "name": "Back Squat", "category": "compound", "pattern": "squat", "equipment": "barbell",
-      "aliases": ["squat", "barbell squat", "high bar squat", "low bar squat"],
-      "primary_muscles": ["quadriceps", "gluteus_maximus"],
-      "secondary_muscles": ["hamstrings", "hip_adductors", "erector_spinae", "rectus_abdominis", "transverse_abdominis", "soleus"] },
-
-    { "id": "front-squat", "name": "Front Squat", "category": "compound", "pattern": "squat", "equipment": "barbell",
-      "aliases": ["front squat"],
-      "primary_muscles": ["quadriceps", "gluteus_maximus"],
-      "secondary_muscles": ["erector_spinae", "rectus_abdominis", "trapezius_upper", "hip_adductors"] },
-
-    { "id": "goblet-squat", "name": "Goblet Squat", "category": "compound", "pattern": "squat", "equipment": "dumbbell",
-      "aliases": ["goblet squat", "kettlebell goblet squat"],
-      "primary_muscles": ["quadriceps", "gluteus_maximus"],
-      "secondary_muscles": ["hip_adductors", "rectus_abdominis", "erector_spinae"] },
-
-    { "id": "hack-squat", "name": "Hack Squat (Machine)", "category": "compound", "pattern": "squat", "equipment": "machine",
-      "aliases": ["hack squat"],
-      "primary_muscles": ["quadriceps"],
-      "secondary_muscles": ["gluteus_maximus", "hip_adductors", "soleus"] },
-
-    { "id": "leg-press", "name": "Leg Press", "category": "compound", "pattern": "squat", "equipment": "machine",
-      "aliases": ["leg press", "45 degree leg press"],
-      "primary_muscles": ["quadriceps", "gluteus_maximus"],
-      "secondary_muscles": ["hamstrings", "hip_adductors"] },
-
-    { "id": "bulgarian-split-squat", "name": "Bulgarian Split Squat", "category": "compound", "pattern": "lunge", "equipment": "dumbbell",
-      "aliases": ["bulgarian split squat", "rear foot elevated split squat", "rfess"],
-      "primary_muscles": ["quadriceps", "gluteus_maximus"],
-      "secondary_muscles": ["hamstrings", "gluteus_medius", "hip_adductors", "rectus_abdominis"] },
-
-    { "id": "walking-lunge", "name": "Walking Lunge", "category": "compound", "pattern": "lunge", "equipment": "dumbbell",
-      "aliases": ["lunge", "walking lunge", "dumbbell lunge"],
-      "primary_muscles": ["quadriceps", "gluteus_maximus"],
-      "secondary_muscles": ["hamstrings", "gluteus_medius", "hip_adductors", "gastrocnemius"] },
-
-    { "id": "reverse-lunge", "name": "Reverse Lunge", "category": "compound", "pattern": "lunge", "equipment": "dumbbell",
-      "aliases": ["reverse lunge", "step back lunge"],
-      "primary_muscles": ["gluteus_maximus", "quadriceps"],
-      "secondary_muscles": ["hamstrings", "gluteus_medius", "erector_spinae"] },
-
-    { "id": "step-up", "name": "Step-Up", "category": "compound", "pattern": "lunge", "equipment": "dumbbell",
-      "aliases": ["step up", "box step up"],
-      "primary_muscles": ["quadriceps", "gluteus_maximus"],
-      "secondary_muscles": ["hamstrings", "gluteus_medius", "soleus"] },
-
-    { "id": "leg-extension", "name": "Leg Extension", "category": "isolation", "pattern": "isolation", "equipment": "machine",
-      "aliases": ["leg extension", "knee extension"],
-      "primary_muscles": ["quadriceps"],
-      "secondary_muscles": [] },
-
-    { "id": "conventional-deadlift", "name": "Conventional Deadlift", "category": "compound", "pattern": "hinge", "equipment": "barbell",
-      "aliases": ["deadlift", "conventional deadlift"],
-      "primary_muscles": ["gluteus_maximus", "hamstrings", "erector_spinae"],
-      "secondary_muscles": ["quadriceps", "latissimus_dorsi", "trapezius_upper", "trapezius_mid", "forearm_flexors", "rectus_abdominis"] },
-
-    { "id": "sumo-deadlift", "name": "Sumo Deadlift", "category": "compound", "pattern": "hinge", "equipment": "barbell",
-      "aliases": ["sumo deadlift"],
-      "primary_muscles": ["gluteus_maximus", "quadriceps", "hip_adductors"],
-      "secondary_muscles": ["hamstrings", "erector_spinae", "trapezius_upper", "forearm_flexors"] },
-
-    { "id": "trap-bar-deadlift", "name": "Trap Bar Deadlift", "category": "compound", "pattern": "hinge", "equipment": "trap-bar",
-      "aliases": ["trap bar deadlift", "hex bar deadlift"],
-      "primary_muscles": ["gluteus_maximus", "quadriceps", "erector_spinae"],
-      "secondary_muscles": ["hamstrings", "trapezius_upper", "forearm_flexors"] },
-
-    { "id": "romanian-deadlift", "name": "Romanian Deadlift", "category": "compound", "pattern": "hinge", "equipment": "barbell",
-      "aliases": ["rdl", "romanian deadlift", "dumbbell rdl"],
-      "primary_muscles": ["hamstrings", "gluteus_maximus"],
-      "secondary_muscles": ["erector_spinae", "latissimus_dorsi", "forearm_flexors", "trapezius_mid"] },
-
-    { "id": "stiff-leg-deadlift", "name": "Stiff-Leg Deadlift", "category": "compound", "pattern": "hinge", "equipment": "barbell",
-      "aliases": ["stiff leg deadlift", "sldl"],
-      "primary_muscles": ["hamstrings", "erector_spinae"],
-      "secondary_muscles": ["gluteus_maximus", "forearm_flexors"] },
-
-    { "id": "good-morning", "name": "Good Morning", "category": "compound", "pattern": "hinge", "equipment": "barbell",
-      "aliases": ["good morning"],
-      "primary_muscles": ["hamstrings", "erector_spinae"],
-      "secondary_muscles": ["gluteus_maximus", "trapezius_mid"] },
-
-    { "id": "hip-thrust", "name": "Barbell Hip Thrust", "category": "compound", "pattern": "hinge", "equipment": "barbell",
-      "aliases": ["hip thrust", "barbell hip thrust"],
-      "primary_muscles": ["gluteus_maximus"],
-      "secondary_muscles": ["hamstrings", "quadriceps", "erector_spinae"] },
-
-    { "id": "glute-bridge", "name": "Glute Bridge", "category": "isolation", "pattern": "hinge", "equipment": "bodyweight",
-      "aliases": ["glute bridge"],
-      "primary_muscles": ["gluteus_maximus"],
-      "secondary_muscles": ["hamstrings", "transverse_abdominis"] },
-
-    { "id": "back-extension", "name": "45° Back Extension", "category": "isolation", "pattern": "hinge", "equipment": "bodyweight",
-      "aliases": ["back extension", "hyperextension", "45 degree back extension"],
-      "primary_muscles": ["erector_spinae"],
-      "secondary_muscles": ["gluteus_maximus", "hamstrings"] },
-
-    { "id": "kettlebell-swing", "name": "Kettlebell Swing", "category": "compound", "pattern": "hinge", "equipment": "kettlebell",
-      "aliases": ["kettlebell swing", "kb swing"],
-      "primary_muscles": ["gluteus_maximus", "hamstrings"],
-      "secondary_muscles": ["erector_spinae", "forearm_flexors", "deltoid_anterior", "transverse_abdominis"] },
-
-    { "id": "nordic-curl", "name": "Nordic Hamstring Curl", "category": "isolation", "pattern": "isolation", "equipment": "bodyweight",
-      "aliases": ["nordic curl", "nordic hamstring curl"],
-      "primary_muscles": ["hamstrings"],
-      "secondary_muscles": ["gastrocnemius", "erector_spinae"] },
-
-    { "id": "lying-leg-curl", "name": "Lying Leg Curl", "category": "isolation", "pattern": "isolation", "equipment": "machine",
-      "aliases": ["leg curl", "lying leg curl", "hamstring curl"],
-      "primary_muscles": ["hamstrings"],
-      "secondary_muscles": ["gastrocnemius"] },
-
-    { "id": "seated-leg-curl", "name": "Seated Leg Curl", "category": "isolation", "pattern": "isolation", "equipment": "machine",
-      "aliases": ["seated leg curl"],
-      "primary_muscles": ["hamstrings"],
-      "secondary_muscles": ["gastrocnemius"] },
-
-    { "id": "barbell-bench-press", "name": "Barbell Bench Press", "category": "compound", "pattern": "horizontal_push", "equipment": "barbell",
-      "aliases": ["bench press", "bench", "flat bench"],
-      "primary_muscles": ["pec_lower", "pec_upper"],
-      "secondary_muscles": ["triceps_brachii", "deltoid_anterior", "serratus_anterior"] },
-
-    { "id": "incline-barbell-press", "name": "Incline Barbell Press", "category": "compound", "pattern": "horizontal_push", "equipment": "barbell",
-      "aliases": ["incline bench press", "incline bench"],
-      "primary_muscles": ["pec_upper"],
-      "secondary_muscles": ["deltoid_anterior", "triceps_brachii", "pec_lower"] },
-
-    { "id": "decline-bench-press", "name": "Decline Bench Press", "category": "compound", "pattern": "horizontal_push", "equipment": "barbell",
-      "aliases": ["decline bench press"],
-      "primary_muscles": ["pec_lower"],
-      "secondary_muscles": ["triceps_brachii", "deltoid_anterior"] },
-
-    { "id": "dumbbell-bench-press", "name": "Dumbbell Bench Press", "category": "compound", "pattern": "horizontal_push", "equipment": "dumbbell",
-      "aliases": ["dumbbell bench press", "db bench"],
-      "primary_muscles": ["pec_lower", "pec_upper"],
-      "secondary_muscles": ["triceps_brachii", "deltoid_anterior", "rotator_cuff"] },
-
-    { "id": "incline-dumbbell-press", "name": "Incline Dumbbell Press", "category": "compound", "pattern": "horizontal_push", "equipment": "dumbbell",
-      "aliases": ["incline dumbbell press", "incline db press"],
-      "primary_muscles": ["pec_upper"],
-      "secondary_muscles": ["deltoid_anterior", "triceps_brachii"] },
-
-    { "id": "machine-chest-press", "name": "Machine Chest Press", "category": "compound", "pattern": "horizontal_push", "equipment": "machine",
-      "aliases": ["machine chest press", "chest press"],
-      "primary_muscles": ["pec_lower", "pec_upper"],
-      "secondary_muscles": ["triceps_brachii", "deltoid_anterior"] },
-
-    { "id": "push-up", "name": "Push-Up", "category": "compound", "pattern": "horizontal_push", "equipment": "bodyweight",
-      "aliases": ["push up", "pushup", "press up"],
-      "primary_muscles": ["pec_lower", "pec_upper"],
-      "secondary_muscles": ["triceps_brachii", "deltoid_anterior", "serratus_anterior", "transverse_abdominis"] },
-
-    { "id": "chest-dip", "name": "Chest Dip", "category": "compound", "pattern": "horizontal_push", "equipment": "bodyweight",
-      "aliases": ["chest dip", "dip", "dips"],
-      "primary_muscles": ["pec_lower"],
-      "secondary_muscles": ["triceps_brachii", "deltoid_anterior", "serratus_anterior"] },
-
-    { "id": "cable-fly", "name": "Cable Fly", "category": "isolation", "pattern": "isolation", "equipment": "cable",
-      "aliases": ["cable fly", "cable crossover"],
-      "primary_muscles": ["pec_lower", "pec_upper"],
-      "secondary_muscles": ["deltoid_anterior"] },
-
-    { "id": "dumbbell-fly", "name": "Dumbbell Fly", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["dumbbell fly", "db fly", "chest fly"],
-      "primary_muscles": ["pec_lower", "pec_upper"],
-      "secondary_muscles": ["deltoid_anterior"] },
-
-    { "id": "pec-deck", "name": "Pec Deck", "category": "isolation", "pattern": "isolation", "equipment": "machine",
-      "aliases": ["pec deck", "machine fly"],
-      "primary_muscles": ["pec_lower", "pec_upper"],
-      "secondary_muscles": ["deltoid_anterior"] },
-
-    { "id": "overhead-press", "name": "Overhead Press", "category": "compound", "pattern": "vertical_push", "equipment": "barbell",
-      "aliases": ["overhead press", "ohp", "military press", "standing press", "shoulder press"],
-      "primary_muscles": ["deltoid_anterior", "deltoid_lateral"],
-      "secondary_muscles": ["triceps_brachii", "trapezius_upper", "serratus_anterior", "rectus_abdominis", "erector_spinae"] },
-
-    { "id": "seated-dumbbell-press", "name": "Seated Dumbbell Shoulder Press", "category": "compound", "pattern": "vertical_push", "equipment": "dumbbell",
-      "aliases": ["seated dumbbell press", "db shoulder press"],
-      "primary_muscles": ["deltoid_anterior", "deltoid_lateral"],
-      "secondary_muscles": ["triceps_brachii", "trapezius_upper"] },
-
-    { "id": "push-press", "name": "Push Press", "category": "compound", "pattern": "vertical_push", "equipment": "barbell",
-      "aliases": ["push press"],
-      "primary_muscles": ["deltoid_anterior", "deltoid_lateral"],
-      "secondary_muscles": ["triceps_brachii", "quadriceps", "gluteus_maximus", "trapezius_upper", "rectus_abdominis"] },
-
-    { "id": "arnold-press", "name": "Arnold Press", "category": "compound", "pattern": "vertical_push", "equipment": "dumbbell",
-      "aliases": ["arnold press"],
-      "primary_muscles": ["deltoid_anterior", "deltoid_lateral"],
-      "secondary_muscles": ["triceps_brachii", "rotator_cuff", "trapezius_upper"] },
-
-    { "id": "machine-shoulder-press", "name": "Machine Shoulder Press", "category": "compound", "pattern": "vertical_push", "equipment": "machine",
-      "aliases": ["machine shoulder press"],
-      "primary_muscles": ["deltoid_anterior", "deltoid_lateral"],
-      "secondary_muscles": ["triceps_brachii"] },
-
-    { "id": "landmine-press", "name": "Landmine Press", "category": "compound", "pattern": "vertical_push", "equipment": "barbell",
-      "aliases": ["landmine press"],
-      "primary_muscles": ["deltoid_anterior", "pec_upper"],
-      "secondary_muscles": ["triceps_brachii", "serratus_anterior", "obliques"] },
-
-    { "id": "barbell-row", "name": "Bent-Over Barbell Row", "category": "compound", "pattern": "horizontal_pull", "equipment": "barbell",
-      "aliases": ["barbell row", "bent over row", "bent-over row"],
-      "primary_muscles": ["latissimus_dorsi", "rhomboids", "trapezius_mid"],
-      "secondary_muscles": ["deltoid_posterior", "biceps_brachii", "brachialis", "erector_spinae", "forearm_flexors", "teres_major"] },
-
-    { "id": "pendlay-row", "name": "Pendlay Row", "category": "compound", "pattern": "horizontal_pull", "equipment": "barbell",
-      "aliases": ["pendlay row"],
-      "primary_muscles": ["latissimus_dorsi", "rhomboids", "trapezius_mid"],
-      "secondary_muscles": ["deltoid_posterior", "biceps_brachii", "erector_spinae"] },
-
-    { "id": "dumbbell-row", "name": "Single-Arm Dumbbell Row", "category": "compound", "pattern": "horizontal_pull", "equipment": "dumbbell",
-      "aliases": ["dumbbell row", "db row", "one arm row"],
-      "primary_muscles": ["latissimus_dorsi", "trapezius_mid"],
-      "secondary_muscles": ["rhomboids", "biceps_brachii", "deltoid_posterior", "teres_major", "obliques", "forearm_flexors"] },
-
-    { "id": "chest-supported-row", "name": "Chest-Supported Row", "category": "compound", "pattern": "horizontal_pull", "equipment": "dumbbell",
-      "aliases": ["chest supported row", "seal row"],
-      "primary_muscles": ["rhomboids", "trapezius_mid", "latissimus_dorsi"],
-      "secondary_muscles": ["deltoid_posterior", "biceps_brachii", "trapezius_lower"] },
-
-    { "id": "seated-cable-row", "name": "Seated Cable Row", "category": "compound", "pattern": "horizontal_pull", "equipment": "cable",
-      "aliases": ["cable row", "seated row"],
-      "primary_muscles": ["latissimus_dorsi", "rhomboids", "trapezius_mid"],
-      "secondary_muscles": ["biceps_brachii", "deltoid_posterior", "erector_spinae", "forearm_flexors"] },
-
-    { "id": "t-bar-row", "name": "T-Bar Row", "category": "compound", "pattern": "horizontal_pull", "equipment": "barbell",
-      "aliases": ["t bar row", "t-bar row"],
-      "primary_muscles": ["latissimus_dorsi", "rhomboids", "trapezius_mid"],
-      "secondary_muscles": ["biceps_brachii", "deltoid_posterior", "erector_spinae"] },
-
-    { "id": "inverted-row", "name": "Inverted Row", "category": "compound", "pattern": "horizontal_pull", "equipment": "bodyweight",
-      "aliases": ["inverted row", "body row"],
-      "primary_muscles": ["rhomboids", "trapezius_mid", "latissimus_dorsi"],
-      "secondary_muscles": ["biceps_brachii", "deltoid_posterior", "transverse_abdominis"] },
-
-    { "id": "machine-row", "name": "Machine Row", "category": "compound", "pattern": "horizontal_pull", "equipment": "machine",
-      "aliases": ["machine row", "hammer strength row"],
-      "primary_muscles": ["latissimus_dorsi", "rhomboids"],
-      "secondary_muscles": ["biceps_brachii", "trapezius_mid", "deltoid_posterior"] },
-
-    { "id": "face-pull", "name": "Face Pull", "category": "isolation", "pattern": "horizontal_pull", "equipment": "cable",
-      "aliases": ["face pull"],
-      "primary_muscles": ["deltoid_posterior", "rotator_cuff"],
-      "secondary_muscles": ["trapezius_mid", "trapezius_lower", "rhomboids"] },
-
-    { "id": "rear-delt-fly", "name": "Rear Delt Fly", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["rear delt fly", "reverse fly", "rear delt raise"],
-      "primary_muscles": ["deltoid_posterior"],
-      "secondary_muscles": ["rhomboids", "trapezius_mid", "rotator_cuff"] },
-
-    { "id": "pull-up", "name": "Pull-Up", "category": "compound", "pattern": "vertical_pull", "equipment": "bodyweight",
-      "aliases": ["pull up", "pullup", "pull-ups"],
-      "primary_muscles": ["latissimus_dorsi", "teres_major"],
-      "secondary_muscles": ["biceps_brachii", "brachialis", "rhomboids", "trapezius_lower", "forearm_flexors", "rectus_abdominis"] },
-
-    { "id": "chin-up", "name": "Chin-Up", "category": "compound", "pattern": "vertical_pull", "equipment": "bodyweight",
-      "aliases": ["chin up", "chinup"],
-      "primary_muscles": ["latissimus_dorsi", "biceps_brachii"],
-      "secondary_muscles": ["brachialis", "teres_major", "rhomboids", "trapezius_lower", "rectus_abdominis"] },
-
-    { "id": "lat-pulldown", "name": "Lat Pulldown", "category": "compound", "pattern": "vertical_pull", "equipment": "cable",
-      "aliases": ["lat pulldown", "pulldown"],
-      "primary_muscles": ["latissimus_dorsi", "teres_major"],
-      "secondary_muscles": ["biceps_brachii", "brachialis", "rhomboids", "trapezius_lower", "forearm_flexors"] },
-
-    { "id": "neutral-grip-pulldown", "name": "Neutral-Grip Pulldown", "category": "compound", "pattern": "vertical_pull", "equipment": "cable",
-      "aliases": ["neutral grip pulldown", "close grip pulldown"],
-      "primary_muscles": ["latissimus_dorsi"],
-      "secondary_muscles": ["biceps_brachii", "brachialis", "teres_major", "trapezius_lower"] },
-
-    { "id": "straight-arm-pulldown", "name": "Straight-Arm Pulldown", "category": "isolation", "pattern": "isolation", "equipment": "cable",
-      "aliases": ["straight arm pulldown", "lat pullover cable"],
-      "primary_muscles": ["latissimus_dorsi"],
-      "secondary_muscles": ["teres_major", "triceps_brachii", "rectus_abdominis"] },
-
-    { "id": "dumbbell-pullover", "name": "Dumbbell Pullover", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["pullover", "dumbbell pullover"],
-      "primary_muscles": ["latissimus_dorsi", "pec_lower"],
-      "secondary_muscles": ["triceps_brachii", "serratus_anterior", "teres_major"] },
-
-    { "id": "lateral-raise", "name": "Dumbbell Lateral Raise", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["lateral raise", "side raise", "side lateral raise"],
-      "primary_muscles": ["deltoid_lateral"],
-      "secondary_muscles": ["trapezius_upper", "deltoid_anterior"] },
-
-    { "id": "cable-lateral-raise", "name": "Cable Lateral Raise", "category": "isolation", "pattern": "isolation", "equipment": "cable",
-      "aliases": ["cable lateral raise"],
-      "primary_muscles": ["deltoid_lateral"],
-      "secondary_muscles": ["trapezius_upper"] },
-
-    { "id": "front-raise", "name": "Front Raise", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["front raise"],
-      "primary_muscles": ["deltoid_anterior"],
-      "secondary_muscles": ["pec_upper", "deltoid_lateral"] },
-
-    { "id": "upright-row", "name": "Upright Row", "category": "compound", "pattern": "vertical_pull", "equipment": "barbell",
-      "aliases": ["upright row"],
-      "primary_muscles": ["deltoid_lateral", "trapezius_upper"],
-      "secondary_muscles": ["biceps_brachii", "rhomboids"] },
-
-    { "id": "barbell-shrug", "name": "Barbell Shrug", "category": "isolation", "pattern": "isolation", "equipment": "barbell",
-      "aliases": ["shrug", "barbell shrug"],
-      "primary_muscles": ["trapezius_upper"],
-      "secondary_muscles": ["trapezius_mid", "forearm_flexors", "rhomboids"] },
-
-    { "id": "dumbbell-shrug", "name": "Dumbbell Shrug", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["dumbbell shrug", "db shrug"],
-      "primary_muscles": ["trapezius_upper"],
-      "secondary_muscles": ["trapezius_mid", "forearm_flexors"] },
-
-    { "id": "cable-external-rotation", "name": "Cable External Rotation", "category": "isolation", "pattern": "isolation", "equipment": "cable",
-      "aliases": ["external rotation", "cuban rotation"],
-      "primary_muscles": ["rotator_cuff"],
-      "secondary_muscles": ["deltoid_posterior"] },
-
-    { "id": "barbell-curl", "name": "Barbell Curl", "category": "isolation", "pattern": "isolation", "equipment": "barbell",
-      "aliases": ["barbell curl", "bicep curl", "ez bar curl"],
-      "primary_muscles": ["biceps_brachii"],
-      "secondary_muscles": ["brachialis", "forearm_flexors"] },
-
-    { "id": "dumbbell-curl", "name": "Dumbbell Curl", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["dumbbell curl", "db curl"],
-      "primary_muscles": ["biceps_brachii"],
-      "secondary_muscles": ["brachialis", "forearm_flexors"] },
-
-    { "id": "incline-dumbbell-curl", "name": "Incline Dumbbell Curl", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["incline curl", "incline dumbbell curl"],
-      "primary_muscles": ["biceps_brachii"],
-      "secondary_muscles": ["brachialis"] },
-
-    { "id": "hammer-curl", "name": "Hammer Curl", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["hammer curl"],
-      "primary_muscles": ["brachialis", "biceps_brachii"],
-      "secondary_muscles": ["forearm_extensors", "forearm_flexors"] },
-
-    { "id": "preacher-curl", "name": "Preacher Curl", "category": "isolation", "pattern": "isolation", "equipment": "barbell",
-      "aliases": ["preacher curl"],
-      "primary_muscles": ["biceps_brachii"],
-      "secondary_muscles": ["brachialis"] },
-
-    { "id": "cable-curl", "name": "Cable Curl", "category": "isolation", "pattern": "isolation", "equipment": "cable",
-      "aliases": ["cable curl"],
-      "primary_muscles": ["biceps_brachii"],
-      "secondary_muscles": ["brachialis", "forearm_flexors"] },
-
-    { "id": "concentration-curl", "name": "Concentration Curl", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["concentration curl"],
-      "primary_muscles": ["biceps_brachii"],
-      "secondary_muscles": ["brachialis"] },
-
-    { "id": "reverse-curl", "name": "Reverse Curl", "category": "isolation", "pattern": "isolation", "equipment": "barbell",
-      "aliases": ["reverse curl"],
-      "primary_muscles": ["brachialis", "forearm_extensors"],
-      "secondary_muscles": ["biceps_brachii"] },
-
-    { "id": "triceps-pushdown", "name": "Triceps Pushdown", "category": "isolation", "pattern": "isolation", "equipment": "cable",
-      "aliases": ["tricep pushdown", "triceps pushdown", "rope pushdown"],
-      "primary_muscles": ["triceps_brachii"],
-      "secondary_muscles": ["forearm_extensors"] },
-
-    { "id": "overhead-triceps-extension", "name": "Overhead Triceps Extension", "category": "isolation", "pattern": "isolation", "equipment": "cable",
-      "aliases": ["overhead tricep extension", "french press"],
-      "primary_muscles": ["triceps_brachii"],
-      "secondary_muscles": ["deltoid_anterior"] },
-
-    { "id": "skull-crusher", "name": "Skull Crusher", "category": "isolation", "pattern": "isolation", "equipment": "barbell",
-      "aliases": ["skull crusher", "lying triceps extension"],
-      "primary_muscles": ["triceps_brachii"],
-      "secondary_muscles": ["forearm_extensors"] },
-
-    { "id": "close-grip-bench-press", "name": "Close-Grip Bench Press", "category": "compound", "pattern": "horizontal_push", "equipment": "barbell",
-      "aliases": ["close grip bench", "close-grip bench press"],
-      "primary_muscles": ["triceps_brachii", "pec_lower"],
-      "secondary_muscles": ["deltoid_anterior", "pec_upper"] },
-
-    { "id": "triceps-dip", "name": "Triceps Dip", "category": "compound", "pattern": "horizontal_push", "equipment": "bodyweight",
-      "aliases": ["tricep dip", "bench dip"],
-      "primary_muscles": ["triceps_brachii"],
-      "secondary_muscles": ["pec_lower", "deltoid_anterior"] },
-
-    { "id": "wrist-curl", "name": "Wrist Curl", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["wrist curl"],
-      "primary_muscles": ["forearm_flexors"],
-      "secondary_muscles": [] },
-
-    { "id": "reverse-wrist-curl", "name": "Reverse Wrist Curl", "category": "isolation", "pattern": "isolation", "equipment": "dumbbell",
-      "aliases": ["reverse wrist curl"],
-      "primary_muscles": ["forearm_extensors"],
-      "secondary_muscles": [] },
-
-    { "id": "farmers-carry", "name": "Farmer's Carry", "category": "compound", "pattern": "carry", "equipment": "dumbbell",
-      "aliases": ["farmers carry", "farmer walk", "suitcase carry"],
-      "primary_muscles": ["forearm_flexors", "trapezius_upper"],
-      "secondary_muscles": ["obliques", "transverse_abdominis", "erector_spinae", "gluteus_medius"] },
-
-    { "id": "plank", "name": "Plank", "category": "isolation", "pattern": "core", "equipment": "bodyweight",
-      "aliases": ["plank", "front plank"],
-      "primary_muscles": ["transverse_abdominis", "rectus_abdominis"],
-      "secondary_muscles": ["obliques", "serratus_anterior", "gluteus_maximus"] },
-
-    { "id": "side-plank", "name": "Side Plank", "category": "isolation", "pattern": "core", "equipment": "bodyweight",
-      "aliases": ["side plank"],
-      "primary_muscles": ["obliques"],
-      "secondary_muscles": ["transverse_abdominis", "gluteus_medius", "deltoid_lateral"] },
-
-    { "id": "hanging-leg-raise", "name": "Hanging Leg Raise", "category": "isolation", "pattern": "core", "equipment": "bodyweight",
-      "aliases": ["hanging leg raise", "leg raise", "knee raise"],
-      "primary_muscles": ["rectus_abdominis", "hip_flexors"],
-      "secondary_muscles": ["obliques", "forearm_flexors", "latissimus_dorsi"] },
-
-    { "id": "cable-crunch", "name": "Cable Crunch", "category": "isolation", "pattern": "core", "equipment": "cable",
-      "aliases": ["cable crunch", "kneeling cable crunch"],
-      "primary_muscles": ["rectus_abdominis"],
-      "secondary_muscles": ["obliques"] },
-
-    { "id": "crunch", "name": "Crunch", "category": "isolation", "pattern": "core", "equipment": "bodyweight",
-      "aliases": ["crunch", "sit up", "situp"],
-      "primary_muscles": ["rectus_abdominis"],
-      "secondary_muscles": ["obliques", "hip_flexors"] },
-
-    { "id": "ab-wheel-rollout", "name": "Ab Wheel Rollout", "category": "isolation", "pattern": "core", "equipment": "bodyweight",
-      "aliases": ["ab wheel", "ab rollout"],
-      "primary_muscles": ["rectus_abdominis", "transverse_abdominis"],
-      "secondary_muscles": ["latissimus_dorsi", "obliques", "erector_spinae", "serratus_anterior"] },
-
-    { "id": "russian-twist", "name": "Russian Twist", "category": "isolation", "pattern": "core", "equipment": "bodyweight",
-      "aliases": ["russian twist"],
-      "primary_muscles": ["obliques"],
-      "secondary_muscles": ["rectus_abdominis", "hip_flexors"] },
-
-    { "id": "pallof-press", "name": "Pallof Press", "category": "isolation", "pattern": "core", "equipment": "cable",
-      "aliases": ["pallof press", "anti rotation press"],
-      "primary_muscles": ["obliques", "transverse_abdominis"],
-      "secondary_muscles": ["rectus_abdominis", "deltoid_anterior"] },
-
-    { "id": "dead-bug", "name": "Dead Bug", "category": "isolation", "pattern": "core", "equipment": "bodyweight",
-      "aliases": ["dead bug"],
-      "primary_muscles": ["transverse_abdominis", "rectus_abdominis"],
-      "secondary_muscles": ["hip_flexors", "obliques"] },
-
-    { "id": "standing-calf-raise", "name": "Standing Calf Raise", "category": "isolation", "pattern": "isolation", "equipment": "machine",
-      "aliases": ["calf raise", "standing calf raise"],
-      "primary_muscles": ["gastrocnemius"],
-      "secondary_muscles": ["soleus"] },
-
-    { "id": "seated-calf-raise", "name": "Seated Calf Raise", "category": "isolation", "pattern": "isolation", "equipment": "machine",
-      "aliases": ["seated calf raise"],
-      "primary_muscles": ["soleus"],
-      "secondary_muscles": ["gastrocnemius"] },
-
-    { "id": "tibialis-raise", "name": "Tibialis Raise", "category": "isolation", "pattern": "isolation", "equipment": "bodyweight",
-      "aliases": ["tibialis raise", "toe raise"],
-      "primary_muscles": ["tibialis_anterior"],
-      "secondary_muscles": [] },
-
-    { "id": "hip-adduction-machine", "name": "Hip Adduction Machine", "category": "isolation", "pattern": "isolation", "equipment": "machine",
-      "aliases": ["hip adduction", "adductor machine"],
-      "primary_muscles": ["hip_adductors"],
-      "secondary_muscles": [] },
-
-    { "id": "hip-abduction-machine", "name": "Hip Abduction Machine", "category": "isolation", "pattern": "isolation", "equipment": "machine",
-      "aliases": ["hip abduction", "abductor machine"],
-      "primary_muscles": ["gluteus_medius"],
-      "secondary_muscles": ["gluteus_maximus"] },
-
-    { "id": "cable-pull-through", "name": "Cable Pull-Through", "category": "compound", "pattern": "hinge", "equipment": "cable",
-      "aliases": ["pull through", "cable pull through"],
-      "primary_muscles": ["gluteus_maximus"],
-      "secondary_muscles": ["hamstrings", "erector_spinae"] },
-
-    { "id": "power-clean", "name": "Power Clean", "category": "compound", "pattern": "hinge", "equipment": "barbell",
-      "aliases": ["power clean", "clean"],
-      "primary_muscles": ["gluteus_maximus", "hamstrings", "trapezius_upper"],
-      "secondary_muscles": ["quadriceps", "erector_spinae", "deltoid_anterior", "gastrocnemius", "forearm_flexors"] },
-
-    { "id": "sled-push", "name": "Sled Push", "category": "compound", "pattern": "carry", "equipment": "machine",
-      "aliases": ["sled push", "prowler push"],
-      "primary_muscles": ["quadriceps", "gluteus_maximus"],
-      "secondary_muscles": ["gastrocnemius", "soleus", "hamstrings", "transverse_abdominis"] }
+    {
+      "id": "back-squat",
+      "name": "Back Squat",
+      "category": "compound",
+      "pattern": "squat",
+      "equipment": "barbell",
+      "aliases": [
+        "squat",
+        "barbell squat",
+        "high bar squat",
+        "low bar squat"
+      ],
+      "primary_muscles": [
+        "quadriceps",
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "hip_adductors",
+        "erector_spinae",
+        "rectus_abdominis",
+        "transverse_abdominis",
+        "soleus"
+      ]
+    },
+    {
+      "id": "front-squat",
+      "name": "Front Squat",
+      "category": "compound",
+      "pattern": "squat",
+      "equipment": "barbell",
+      "aliases": [
+        "front squat"
+      ],
+      "primary_muscles": [
+        "quadriceps",
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "erector_spinae",
+        "rectus_abdominis",
+        "trapezius_upper",
+        "hip_adductors"
+      ]
+    },
+    {
+      "id": "goblet-squat",
+      "name": "Goblet Squat",
+      "category": "compound",
+      "pattern": "squat",
+      "equipment": "dumbbell",
+      "aliases": [
+        "goblet squat",
+        "kettlebell goblet squat"
+      ],
+      "primary_muscles": [
+        "quadriceps",
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "hip_adductors",
+        "rectus_abdominis",
+        "erector_spinae"
+      ]
+    },
+    {
+      "id": "hack-squat",
+      "name": "Hack Squat (Machine)",
+      "category": "compound",
+      "pattern": "squat",
+      "equipment": "machine",
+      "aliases": [
+        "hack squat"
+      ],
+      "primary_muscles": [
+        "quadriceps"
+      ],
+      "secondary_muscles": [
+        "gluteus_maximus",
+        "hip_adductors",
+        "soleus"
+      ]
+    },
+    {
+      "id": "leg-press",
+      "name": "Leg Press",
+      "category": "compound",
+      "pattern": "squat",
+      "equipment": "machine",
+      "aliases": [
+        "leg press",
+        "45 degree leg press"
+      ],
+      "primary_muscles": [
+        "quadriceps",
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "hip_adductors"
+      ]
+    },
+    {
+      "id": "bulgarian-split-squat",
+      "name": "Bulgarian Split Squat",
+      "category": "compound",
+      "pattern": "lunge",
+      "equipment": "dumbbell",
+      "aliases": [
+        "bulgarian split squat",
+        "rear foot elevated split squat",
+        "rfess"
+      ],
+      "primary_muscles": [
+        "quadriceps",
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "gluteus_medius",
+        "hip_adductors",
+        "rectus_abdominis"
+      ]
+    },
+    {
+      "id": "walking-lunge",
+      "name": "Walking Lunge",
+      "category": "compound",
+      "pattern": "lunge",
+      "equipment": "dumbbell",
+      "aliases": [
+        "lunge",
+        "walking lunge",
+        "dumbbell lunge"
+      ],
+      "primary_muscles": [
+        "quadriceps",
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "gluteus_medius",
+        "hip_adductors",
+        "gastrocnemius"
+      ]
+    },
+    {
+      "id": "reverse-lunge",
+      "name": "Reverse Lunge",
+      "category": "compound",
+      "pattern": "lunge",
+      "equipment": "dumbbell",
+      "aliases": [
+        "reverse lunge",
+        "step back lunge"
+      ],
+      "primary_muscles": [
+        "gluteus_maximus",
+        "quadriceps"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "gluteus_medius",
+        "erector_spinae"
+      ]
+    },
+    {
+      "id": "step-up",
+      "name": "Step-Up",
+      "category": "compound",
+      "pattern": "lunge",
+      "equipment": "dumbbell",
+      "aliases": [
+        "step up",
+        "box step up"
+      ],
+      "primary_muscles": [
+        "quadriceps",
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "gluteus_medius",
+        "soleus"
+      ]
+    },
+    {
+      "id": "leg-extension",
+      "name": "Leg Extension",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "machine",
+      "aliases": [
+        "leg extension",
+        "knee extension"
+      ],
+      "primary_muscles": [
+        "quadriceps"
+      ],
+      "secondary_muscles": []
+    },
+    {
+      "id": "conventional-deadlift",
+      "name": "Conventional Deadlift",
+      "category": "compound",
+      "pattern": "hinge",
+      "equipment": "barbell",
+      "aliases": [
+        "deadlift",
+        "conventional deadlift"
+      ],
+      "primary_muscles": [
+        "gluteus_maximus",
+        "hamstrings",
+        "erector_spinae"
+      ],
+      "secondary_muscles": [
+        "quadriceps",
+        "latissimus_dorsi",
+        "trapezius_upper",
+        "trapezius_mid",
+        "forearm_flexors",
+        "rectus_abdominis"
+      ]
+    },
+    {
+      "id": "sumo-deadlift",
+      "name": "Sumo Deadlift",
+      "category": "compound",
+      "pattern": "hinge",
+      "equipment": "barbell",
+      "aliases": [
+        "sumo deadlift"
+      ],
+      "primary_muscles": [
+        "gluteus_maximus",
+        "quadriceps",
+        "hip_adductors"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "erector_spinae",
+        "trapezius_upper",
+        "forearm_flexors"
+      ]
+    },
+    {
+      "id": "trap-bar-deadlift",
+      "name": "Trap Bar Deadlift",
+      "category": "compound",
+      "pattern": "hinge",
+      "equipment": "trap-bar",
+      "aliases": [
+        "trap bar deadlift",
+        "hex bar deadlift"
+      ],
+      "primary_muscles": [
+        "gluteus_maximus",
+        "quadriceps",
+        "erector_spinae"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "trapezius_upper",
+        "forearm_flexors"
+      ]
+    },
+    {
+      "id": "romanian-deadlift",
+      "name": "Romanian Deadlift",
+      "category": "compound",
+      "pattern": "hinge",
+      "equipment": "barbell",
+      "aliases": [
+        "rdl",
+        "romanian deadlift",
+        "dumbbell rdl"
+      ],
+      "primary_muscles": [
+        "hamstrings",
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "erector_spinae",
+        "latissimus_dorsi",
+        "forearm_flexors",
+        "trapezius_mid"
+      ]
+    },
+    {
+      "id": "stiff-leg-deadlift",
+      "name": "Stiff-Leg Deadlift",
+      "category": "compound",
+      "pattern": "hinge",
+      "equipment": "barbell",
+      "aliases": [
+        "stiff leg deadlift",
+        "sldl"
+      ],
+      "primary_muscles": [
+        "hamstrings",
+        "erector_spinae"
+      ],
+      "secondary_muscles": [
+        "gluteus_maximus",
+        "forearm_flexors"
+      ]
+    },
+    {
+      "id": "good-morning",
+      "name": "Good Morning",
+      "category": "compound",
+      "pattern": "hinge",
+      "equipment": "barbell",
+      "aliases": [
+        "good morning"
+      ],
+      "primary_muscles": [
+        "hamstrings",
+        "erector_spinae"
+      ],
+      "secondary_muscles": [
+        "gluteus_maximus",
+        "trapezius_mid"
+      ]
+    },
+    {
+      "id": "hip-thrust",
+      "name": "Barbell Hip Thrust",
+      "category": "compound",
+      "pattern": "hinge",
+      "equipment": "barbell",
+      "aliases": [
+        "hip thrust",
+        "barbell hip thrust"
+      ],
+      "primary_muscles": [
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "quadriceps",
+        "erector_spinae"
+      ]
+    },
+    {
+      "id": "glute-bridge",
+      "name": "Glute Bridge",
+      "category": "isolation",
+      "pattern": "hinge",
+      "equipment": "bodyweight",
+      "aliases": [
+        "glute bridge"
+      ],
+      "primary_muscles": [
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "transverse_abdominis"
+      ]
+    },
+    {
+      "id": "back-extension",
+      "name": "45\u00b0 Back Extension",
+      "category": "isolation",
+      "pattern": "hinge",
+      "equipment": "bodyweight",
+      "aliases": [
+        "back extension",
+        "hyperextension",
+        "45 degree back extension"
+      ],
+      "primary_muscles": [
+        "erector_spinae"
+      ],
+      "secondary_muscles": [
+        "gluteus_maximus",
+        "hamstrings"
+      ]
+    },
+    {
+      "id": "kettlebell-swing",
+      "name": "Kettlebell Swing",
+      "category": "compound",
+      "pattern": "hinge",
+      "equipment": "kettlebell",
+      "aliases": [
+        "kettlebell swing",
+        "kb swing"
+      ],
+      "primary_muscles": [
+        "gluteus_maximus",
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "erector_spinae",
+        "forearm_flexors",
+        "deltoid_anterior",
+        "transverse_abdominis"
+      ]
+    },
+    {
+      "id": "nordic-curl",
+      "name": "Nordic Hamstring Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "bodyweight",
+      "aliases": [
+        "nordic curl",
+        "nordic hamstring curl"
+      ],
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "gastrocnemius",
+        "erector_spinae"
+      ]
+    },
+    {
+      "id": "lying-leg-curl",
+      "name": "Lying Leg Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "machine",
+      "aliases": [
+        "leg curl",
+        "lying leg curl",
+        "hamstring curl"
+      ],
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "gastrocnemius"
+      ]
+    },
+    {
+      "id": "seated-leg-curl",
+      "name": "Seated Leg Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "machine",
+      "aliases": [
+        "seated leg curl"
+      ],
+      "primary_muscles": [
+        "hamstrings"
+      ],
+      "secondary_muscles": [
+        "gastrocnemius"
+      ]
+    },
+    {
+      "id": "barbell-bench-press",
+      "name": "Barbell Bench Press",
+      "category": "compound",
+      "pattern": "horizontal_push",
+      "equipment": "barbell",
+      "aliases": [
+        "bench press",
+        "bench",
+        "flat bench"
+      ],
+      "primary_muscles": [
+        "pec_lower",
+        "pec_upper"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "deltoid_anterior",
+        "serratus_anterior"
+      ]
+    },
+    {
+      "id": "incline-barbell-press",
+      "name": "Incline Barbell Press",
+      "category": "compound",
+      "pattern": "horizontal_push",
+      "equipment": "barbell",
+      "aliases": [
+        "incline bench press",
+        "incline bench"
+      ],
+      "primary_muscles": [
+        "pec_upper"
+      ],
+      "secondary_muscles": [
+        "deltoid_anterior",
+        "triceps_brachii",
+        "pec_lower"
+      ]
+    },
+    {
+      "id": "decline-bench-press",
+      "name": "Decline Bench Press",
+      "category": "compound",
+      "pattern": "horizontal_push",
+      "equipment": "barbell",
+      "aliases": [
+        "decline bench press"
+      ],
+      "primary_muscles": [
+        "pec_lower"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "deltoid_anterior"
+      ]
+    },
+    {
+      "id": "dumbbell-bench-press",
+      "name": "Dumbbell Bench Press",
+      "category": "compound",
+      "pattern": "horizontal_push",
+      "equipment": "dumbbell",
+      "aliases": [
+        "dumbbell bench press",
+        "db bench"
+      ],
+      "primary_muscles": [
+        "pec_lower",
+        "pec_upper"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "deltoid_anterior",
+        "rotator_cuff"
+      ]
+    },
+    {
+      "id": "incline-dumbbell-press",
+      "name": "Incline Dumbbell Press",
+      "category": "compound",
+      "pattern": "horizontal_push",
+      "equipment": "dumbbell",
+      "aliases": [
+        "incline dumbbell press",
+        "incline db press"
+      ],
+      "primary_muscles": [
+        "pec_upper"
+      ],
+      "secondary_muscles": [
+        "deltoid_anterior",
+        "triceps_brachii"
+      ]
+    },
+    {
+      "id": "machine-chest-press",
+      "name": "Machine Chest Press",
+      "category": "compound",
+      "pattern": "horizontal_push",
+      "equipment": "machine",
+      "aliases": [
+        "machine chest press",
+        "chest press"
+      ],
+      "primary_muscles": [
+        "pec_lower",
+        "pec_upper"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "deltoid_anterior"
+      ]
+    },
+    {
+      "id": "push-up",
+      "name": "Push-Up",
+      "category": "compound",
+      "pattern": "horizontal_push",
+      "equipment": "bodyweight",
+      "aliases": [
+        "push up",
+        "pushup",
+        "press up"
+      ],
+      "primary_muscles": [
+        "pec_lower",
+        "pec_upper"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "deltoid_anterior",
+        "serratus_anterior",
+        "transverse_abdominis"
+      ]
+    },
+    {
+      "id": "chest-dip",
+      "name": "Chest Dip",
+      "category": "compound",
+      "pattern": "horizontal_push",
+      "equipment": "bodyweight",
+      "aliases": [
+        "chest dip",
+        "dip",
+        "dips"
+      ],
+      "primary_muscles": [
+        "pec_lower"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "deltoid_anterior",
+        "serratus_anterior"
+      ]
+    },
+    {
+      "id": "cable-fly",
+      "name": "Cable Fly",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "cable",
+      "aliases": [
+        "cable fly",
+        "cable crossover"
+      ],
+      "primary_muscles": [
+        "pec_lower",
+        "pec_upper"
+      ],
+      "secondary_muscles": [
+        "deltoid_anterior"
+      ]
+    },
+    {
+      "id": "dumbbell-fly",
+      "name": "Dumbbell Fly",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "dumbbell fly",
+        "db fly",
+        "chest fly"
+      ],
+      "primary_muscles": [
+        "pec_lower",
+        "pec_upper"
+      ],
+      "secondary_muscles": [
+        "deltoid_anterior"
+      ]
+    },
+    {
+      "id": "pec-deck",
+      "name": "Pec Deck",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "machine",
+      "aliases": [
+        "pec deck",
+        "machine fly"
+      ],
+      "primary_muscles": [
+        "pec_lower",
+        "pec_upper"
+      ],
+      "secondary_muscles": [
+        "deltoid_anterior"
+      ]
+    },
+    {
+      "id": "overhead-press",
+      "name": "Overhead Press",
+      "category": "compound",
+      "pattern": "vertical_push",
+      "equipment": "barbell",
+      "aliases": [
+        "overhead press",
+        "ohp",
+        "military press",
+        "standing press",
+        "shoulder press"
+      ],
+      "primary_muscles": [
+        "deltoid_anterior",
+        "deltoid_lateral"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "trapezius_upper",
+        "serratus_anterior",
+        "rectus_abdominis",
+        "erector_spinae"
+      ]
+    },
+    {
+      "id": "seated-dumbbell-press",
+      "name": "Seated Dumbbell Shoulder Press",
+      "category": "compound",
+      "pattern": "vertical_push",
+      "equipment": "dumbbell",
+      "aliases": [
+        "seated dumbbell press",
+        "db shoulder press"
+      ],
+      "primary_muscles": [
+        "deltoid_anterior",
+        "deltoid_lateral"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "trapezius_upper"
+      ]
+    },
+    {
+      "id": "push-press",
+      "name": "Push Press",
+      "category": "compound",
+      "pattern": "vertical_push",
+      "equipment": "barbell",
+      "aliases": [
+        "push press"
+      ],
+      "primary_muscles": [
+        "deltoid_anterior",
+        "deltoid_lateral"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "quadriceps",
+        "gluteus_maximus",
+        "trapezius_upper",
+        "rectus_abdominis"
+      ]
+    },
+    {
+      "id": "arnold-press",
+      "name": "Arnold Press",
+      "category": "compound",
+      "pattern": "vertical_push",
+      "equipment": "dumbbell",
+      "aliases": [
+        "arnold press"
+      ],
+      "primary_muscles": [
+        "deltoid_anterior",
+        "deltoid_lateral"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "rotator_cuff",
+        "trapezius_upper"
+      ]
+    },
+    {
+      "id": "machine-shoulder-press",
+      "name": "Machine Shoulder Press",
+      "category": "compound",
+      "pattern": "vertical_push",
+      "equipment": "machine",
+      "aliases": [
+        "machine shoulder press"
+      ],
+      "primary_muscles": [
+        "deltoid_anterior",
+        "deltoid_lateral"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii"
+      ]
+    },
+    {
+      "id": "landmine-press",
+      "name": "Landmine Press",
+      "category": "compound",
+      "pattern": "vertical_push",
+      "equipment": "barbell",
+      "aliases": [
+        "landmine press"
+      ],
+      "primary_muscles": [
+        "deltoid_anterior",
+        "pec_upper"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "serratus_anterior",
+        "obliques"
+      ]
+    },
+    {
+      "id": "barbell-row",
+      "name": "Bent-Over Barbell Row",
+      "category": "compound",
+      "pattern": "horizontal_pull",
+      "equipment": "barbell",
+      "aliases": [
+        "barbell row",
+        "bent over row",
+        "bent-over row"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi",
+        "rhomboids",
+        "trapezius_mid"
+      ],
+      "secondary_muscles": [
+        "deltoid_posterior",
+        "biceps_brachii",
+        "brachialis",
+        "erector_spinae",
+        "forearm_flexors",
+        "teres_major"
+      ]
+    },
+    {
+      "id": "pendlay-row",
+      "name": "Pendlay Row",
+      "category": "compound",
+      "pattern": "horizontal_pull",
+      "equipment": "barbell",
+      "aliases": [
+        "pendlay row"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi",
+        "rhomboids",
+        "trapezius_mid"
+      ],
+      "secondary_muscles": [
+        "deltoid_posterior",
+        "biceps_brachii",
+        "erector_spinae"
+      ]
+    },
+    {
+      "id": "dumbbell-row",
+      "name": "Single-Arm Dumbbell Row",
+      "category": "compound",
+      "pattern": "horizontal_pull",
+      "equipment": "dumbbell",
+      "aliases": [
+        "dumbbell row",
+        "db row",
+        "one arm row"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi",
+        "trapezius_mid"
+      ],
+      "secondary_muscles": [
+        "rhomboids",
+        "biceps_brachii",
+        "deltoid_posterior",
+        "teres_major",
+        "obliques",
+        "forearm_flexors"
+      ]
+    },
+    {
+      "id": "chest-supported-row",
+      "name": "Chest-Supported Row",
+      "category": "compound",
+      "pattern": "horizontal_pull",
+      "equipment": "dumbbell",
+      "aliases": [
+        "chest supported row",
+        "seal row"
+      ],
+      "primary_muscles": [
+        "rhomboids",
+        "trapezius_mid",
+        "latissimus_dorsi"
+      ],
+      "secondary_muscles": [
+        "deltoid_posterior",
+        "biceps_brachii",
+        "trapezius_lower"
+      ]
+    },
+    {
+      "id": "seated-cable-row",
+      "name": "Seated Cable Row",
+      "category": "compound",
+      "pattern": "horizontal_pull",
+      "equipment": "cable",
+      "aliases": [
+        "cable row",
+        "seated row"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi",
+        "rhomboids",
+        "trapezius_mid"
+      ],
+      "secondary_muscles": [
+        "biceps_brachii",
+        "deltoid_posterior",
+        "erector_spinae",
+        "forearm_flexors"
+      ]
+    },
+    {
+      "id": "t-bar-row",
+      "name": "T-Bar Row",
+      "category": "compound",
+      "pattern": "horizontal_pull",
+      "equipment": "barbell",
+      "aliases": [
+        "t bar row",
+        "t-bar row"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi",
+        "rhomboids",
+        "trapezius_mid"
+      ],
+      "secondary_muscles": [
+        "biceps_brachii",
+        "deltoid_posterior",
+        "erector_spinae"
+      ]
+    },
+    {
+      "id": "inverted-row",
+      "name": "Inverted Row",
+      "category": "compound",
+      "pattern": "horizontal_pull",
+      "equipment": "bodyweight",
+      "aliases": [
+        "inverted row",
+        "body row"
+      ],
+      "primary_muscles": [
+        "rhomboids",
+        "trapezius_mid",
+        "latissimus_dorsi"
+      ],
+      "secondary_muscles": [
+        "biceps_brachii",
+        "deltoid_posterior",
+        "transverse_abdominis"
+      ]
+    },
+    {
+      "id": "machine-row",
+      "name": "Machine Row",
+      "category": "compound",
+      "pattern": "horizontal_pull",
+      "equipment": "machine",
+      "aliases": [
+        "machine row",
+        "hammer strength row"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi",
+        "rhomboids"
+      ],
+      "secondary_muscles": [
+        "biceps_brachii",
+        "trapezius_mid",
+        "deltoid_posterior"
+      ]
+    },
+    {
+      "id": "face-pull",
+      "name": "Face Pull",
+      "category": "isolation",
+      "pattern": "horizontal_pull",
+      "equipment": "cable",
+      "aliases": [
+        "face pull"
+      ],
+      "primary_muscles": [
+        "deltoid_posterior",
+        "rotator_cuff"
+      ],
+      "secondary_muscles": [
+        "trapezius_mid",
+        "trapezius_lower",
+        "rhomboids"
+      ]
+    },
+    {
+      "id": "rear-delt-fly",
+      "name": "Rear Delt Fly",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "rear delt fly",
+        "reverse fly",
+        "rear delt raise"
+      ],
+      "primary_muscles": [
+        "deltoid_posterior"
+      ],
+      "secondary_muscles": [
+        "rhomboids",
+        "trapezius_mid",
+        "rotator_cuff"
+      ]
+    },
+    {
+      "id": "pull-up",
+      "name": "Pull-Up",
+      "category": "compound",
+      "pattern": "vertical_pull",
+      "equipment": "bodyweight",
+      "aliases": [
+        "pull up",
+        "pullup",
+        "pull-ups"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi",
+        "teres_major"
+      ],
+      "secondary_muscles": [
+        "biceps_brachii",
+        "brachialis",
+        "rhomboids",
+        "trapezius_lower",
+        "forearm_flexors",
+        "rectus_abdominis"
+      ]
+    },
+    {
+      "id": "chin-up",
+      "name": "Chin-Up",
+      "category": "compound",
+      "pattern": "vertical_pull",
+      "equipment": "bodyweight",
+      "aliases": [
+        "chin up",
+        "chinup"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi",
+        "biceps_brachii"
+      ],
+      "secondary_muscles": [
+        "brachialis",
+        "teres_major",
+        "rhomboids",
+        "trapezius_lower",
+        "rectus_abdominis"
+      ]
+    },
+    {
+      "id": "lat-pulldown",
+      "name": "Lat Pulldown",
+      "category": "compound",
+      "pattern": "vertical_pull",
+      "equipment": "cable",
+      "aliases": [
+        "lat pulldown",
+        "pulldown"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi",
+        "teres_major"
+      ],
+      "secondary_muscles": [
+        "biceps_brachii",
+        "brachialis",
+        "rhomboids",
+        "trapezius_lower",
+        "forearm_flexors"
+      ]
+    },
+    {
+      "id": "neutral-grip-pulldown",
+      "name": "Neutral-Grip Pulldown",
+      "category": "compound",
+      "pattern": "vertical_pull",
+      "equipment": "cable",
+      "aliases": [
+        "neutral grip pulldown",
+        "close grip pulldown"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi"
+      ],
+      "secondary_muscles": [
+        "biceps_brachii",
+        "brachialis",
+        "teres_major",
+        "trapezius_lower"
+      ]
+    },
+    {
+      "id": "straight-arm-pulldown",
+      "name": "Straight-Arm Pulldown",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "cable",
+      "aliases": [
+        "straight arm pulldown",
+        "lat pullover cable"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi"
+      ],
+      "secondary_muscles": [
+        "teres_major",
+        "triceps_brachii",
+        "rectus_abdominis"
+      ]
+    },
+    {
+      "id": "dumbbell-pullover",
+      "name": "Dumbbell Pullover",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "pullover",
+        "dumbbell pullover"
+      ],
+      "primary_muscles": [
+        "latissimus_dorsi",
+        "pec_lower"
+      ],
+      "secondary_muscles": [
+        "triceps_brachii",
+        "serratus_anterior",
+        "teres_major"
+      ]
+    },
+    {
+      "id": "lateral-raise",
+      "name": "Dumbbell Lateral Raise",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "lateral raise",
+        "side raise",
+        "side lateral raise"
+      ],
+      "primary_muscles": [
+        "deltoid_lateral"
+      ],
+      "secondary_muscles": [
+        "trapezius_upper",
+        "deltoid_anterior"
+      ]
+    },
+    {
+      "id": "cable-lateral-raise",
+      "name": "Cable Lateral Raise",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "cable",
+      "aliases": [
+        "cable lateral raise"
+      ],
+      "primary_muscles": [
+        "deltoid_lateral"
+      ],
+      "secondary_muscles": [
+        "trapezius_upper"
+      ]
+    },
+    {
+      "id": "front-raise",
+      "name": "Front Raise",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "front raise"
+      ],
+      "primary_muscles": [
+        "deltoid_anterior"
+      ],
+      "secondary_muscles": [
+        "pec_upper",
+        "deltoid_lateral"
+      ]
+    },
+    {
+      "id": "upright-row",
+      "name": "Upright Row",
+      "category": "compound",
+      "pattern": "vertical_pull",
+      "equipment": "barbell",
+      "aliases": [
+        "upright row"
+      ],
+      "primary_muscles": [
+        "deltoid_lateral",
+        "trapezius_upper"
+      ],
+      "secondary_muscles": [
+        "biceps_brachii",
+        "rhomboids"
+      ]
+    },
+    {
+      "id": "barbell-shrug",
+      "name": "Barbell Shrug",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "barbell",
+      "aliases": [
+        "shrug",
+        "barbell shrug"
+      ],
+      "primary_muscles": [
+        "trapezius_upper"
+      ],
+      "secondary_muscles": [
+        "trapezius_mid",
+        "forearm_flexors",
+        "rhomboids",
+        "neck"
+      ]
+    },
+    {
+      "id": "dumbbell-shrug",
+      "name": "Dumbbell Shrug",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "dumbbell shrug",
+        "db shrug"
+      ],
+      "primary_muscles": [
+        "trapezius_upper"
+      ],
+      "secondary_muscles": [
+        "trapezius_mid",
+        "forearm_flexors",
+        "neck"
+      ]
+    },
+    {
+      "id": "cable-external-rotation",
+      "name": "Cable External Rotation",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "cable",
+      "aliases": [
+        "external rotation",
+        "cuban rotation"
+      ],
+      "primary_muscles": [
+        "rotator_cuff"
+      ],
+      "secondary_muscles": [
+        "deltoid_posterior"
+      ]
+    },
+    {
+      "id": "barbell-curl",
+      "name": "Barbell Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "barbell",
+      "aliases": [
+        "barbell curl",
+        "bicep curl",
+        "ez bar curl"
+      ],
+      "primary_muscles": [
+        "biceps_brachii"
+      ],
+      "secondary_muscles": [
+        "brachialis",
+        "forearm_flexors"
+      ]
+    },
+    {
+      "id": "dumbbell-curl",
+      "name": "Dumbbell Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "dumbbell curl",
+        "db curl"
+      ],
+      "primary_muscles": [
+        "biceps_brachii"
+      ],
+      "secondary_muscles": [
+        "brachialis",
+        "forearm_flexors"
+      ]
+    },
+    {
+      "id": "incline-dumbbell-curl",
+      "name": "Incline Dumbbell Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "incline curl",
+        "incline dumbbell curl"
+      ],
+      "primary_muscles": [
+        "biceps_brachii"
+      ],
+      "secondary_muscles": [
+        "brachialis"
+      ]
+    },
+    {
+      "id": "hammer-curl",
+      "name": "Hammer Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "hammer curl"
+      ],
+      "primary_muscles": [
+        "brachialis",
+        "biceps_brachii"
+      ],
+      "secondary_muscles": [
+        "forearm_extensors",
+        "forearm_flexors"
+      ]
+    },
+    {
+      "id": "preacher-curl",
+      "name": "Preacher Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "barbell",
+      "aliases": [
+        "preacher curl"
+      ],
+      "primary_muscles": [
+        "biceps_brachii"
+      ],
+      "secondary_muscles": [
+        "brachialis"
+      ]
+    },
+    {
+      "id": "cable-curl",
+      "name": "Cable Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "cable",
+      "aliases": [
+        "cable curl"
+      ],
+      "primary_muscles": [
+        "biceps_brachii"
+      ],
+      "secondary_muscles": [
+        "brachialis",
+        "forearm_flexors"
+      ]
+    },
+    {
+      "id": "concentration-curl",
+      "name": "Concentration Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "concentration curl"
+      ],
+      "primary_muscles": [
+        "biceps_brachii"
+      ],
+      "secondary_muscles": [
+        "brachialis"
+      ]
+    },
+    {
+      "id": "reverse-curl",
+      "name": "Reverse Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "barbell",
+      "aliases": [
+        "reverse curl"
+      ],
+      "primary_muscles": [
+        "brachialis",
+        "forearm_extensors"
+      ],
+      "secondary_muscles": [
+        "biceps_brachii"
+      ]
+    },
+    {
+      "id": "triceps-pushdown",
+      "name": "Triceps Pushdown",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "cable",
+      "aliases": [
+        "tricep pushdown",
+        "triceps pushdown",
+        "rope pushdown"
+      ],
+      "primary_muscles": [
+        "triceps_brachii"
+      ],
+      "secondary_muscles": [
+        "forearm_extensors"
+      ]
+    },
+    {
+      "id": "overhead-triceps-extension",
+      "name": "Overhead Triceps Extension",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "cable",
+      "aliases": [
+        "overhead tricep extension",
+        "french press"
+      ],
+      "primary_muscles": [
+        "triceps_brachii"
+      ],
+      "secondary_muscles": [
+        "deltoid_anterior"
+      ]
+    },
+    {
+      "id": "skull-crusher",
+      "name": "Skull Crusher",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "barbell",
+      "aliases": [
+        "skull crusher",
+        "lying triceps extension"
+      ],
+      "primary_muscles": [
+        "triceps_brachii"
+      ],
+      "secondary_muscles": [
+        "forearm_extensors"
+      ]
+    },
+    {
+      "id": "close-grip-bench-press",
+      "name": "Close-Grip Bench Press",
+      "category": "compound",
+      "pattern": "horizontal_push",
+      "equipment": "barbell",
+      "aliases": [
+        "close grip bench",
+        "close-grip bench press"
+      ],
+      "primary_muscles": [
+        "triceps_brachii",
+        "pec_lower"
+      ],
+      "secondary_muscles": [
+        "deltoid_anterior",
+        "pec_upper"
+      ]
+    },
+    {
+      "id": "triceps-dip",
+      "name": "Triceps Dip",
+      "category": "compound",
+      "pattern": "horizontal_push",
+      "equipment": "bodyweight",
+      "aliases": [
+        "tricep dip",
+        "bench dip"
+      ],
+      "primary_muscles": [
+        "triceps_brachii"
+      ],
+      "secondary_muscles": [
+        "pec_lower",
+        "deltoid_anterior"
+      ]
+    },
+    {
+      "id": "wrist-curl",
+      "name": "Wrist Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "wrist curl"
+      ],
+      "primary_muscles": [
+        "forearm_flexors"
+      ],
+      "secondary_muscles": []
+    },
+    {
+      "id": "reverse-wrist-curl",
+      "name": "Reverse Wrist Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "dumbbell",
+      "aliases": [
+        "reverse wrist curl"
+      ],
+      "primary_muscles": [
+        "forearm_extensors"
+      ],
+      "secondary_muscles": []
+    },
+    {
+      "id": "farmers-carry",
+      "name": "Farmer's Carry",
+      "category": "compound",
+      "pattern": "carry",
+      "equipment": "dumbbell",
+      "aliases": [
+        "farmers carry",
+        "farmer walk",
+        "suitcase carry"
+      ],
+      "primary_muscles": [
+        "forearm_flexors",
+        "trapezius_upper"
+      ],
+      "secondary_muscles": [
+        "obliques",
+        "transverse_abdominis",
+        "erector_spinae",
+        "gluteus_medius"
+      ]
+    },
+    {
+      "id": "plank",
+      "name": "Plank",
+      "category": "isolation",
+      "pattern": "core",
+      "equipment": "bodyweight",
+      "aliases": [
+        "plank",
+        "front plank"
+      ],
+      "primary_muscles": [
+        "transverse_abdominis",
+        "rectus_abdominis"
+      ],
+      "secondary_muscles": [
+        "obliques",
+        "serratus_anterior",
+        "gluteus_maximus"
+      ]
+    },
+    {
+      "id": "side-plank",
+      "name": "Side Plank",
+      "category": "isolation",
+      "pattern": "core",
+      "equipment": "bodyweight",
+      "aliases": [
+        "side plank"
+      ],
+      "primary_muscles": [
+        "obliques"
+      ],
+      "secondary_muscles": [
+        "transverse_abdominis",
+        "gluteus_medius",
+        "deltoid_lateral"
+      ]
+    },
+    {
+      "id": "hanging-leg-raise",
+      "name": "Hanging Leg Raise",
+      "category": "isolation",
+      "pattern": "core",
+      "equipment": "bodyweight",
+      "aliases": [
+        "hanging leg raise",
+        "leg raise",
+        "knee raise"
+      ],
+      "primary_muscles": [
+        "rectus_abdominis",
+        "hip_flexors"
+      ],
+      "secondary_muscles": [
+        "obliques",
+        "forearm_flexors",
+        "latissimus_dorsi"
+      ]
+    },
+    {
+      "id": "cable-crunch",
+      "name": "Cable Crunch",
+      "category": "isolation",
+      "pattern": "core",
+      "equipment": "cable",
+      "aliases": [
+        "cable crunch",
+        "kneeling cable crunch"
+      ],
+      "primary_muscles": [
+        "rectus_abdominis"
+      ],
+      "secondary_muscles": [
+        "obliques"
+      ]
+    },
+    {
+      "id": "crunch",
+      "name": "Crunch",
+      "category": "isolation",
+      "pattern": "core",
+      "equipment": "bodyweight",
+      "aliases": [
+        "crunch",
+        "sit up",
+        "situp"
+      ],
+      "primary_muscles": [
+        "rectus_abdominis"
+      ],
+      "secondary_muscles": [
+        "obliques",
+        "hip_flexors"
+      ]
+    },
+    {
+      "id": "ab-wheel-rollout",
+      "name": "Ab Wheel Rollout",
+      "category": "isolation",
+      "pattern": "core",
+      "equipment": "bodyweight",
+      "aliases": [
+        "ab wheel",
+        "ab rollout"
+      ],
+      "primary_muscles": [
+        "rectus_abdominis",
+        "transverse_abdominis"
+      ],
+      "secondary_muscles": [
+        "latissimus_dorsi",
+        "obliques",
+        "erector_spinae",
+        "serratus_anterior"
+      ]
+    },
+    {
+      "id": "russian-twist",
+      "name": "Russian Twist",
+      "category": "isolation",
+      "pattern": "core",
+      "equipment": "bodyweight",
+      "aliases": [
+        "russian twist"
+      ],
+      "primary_muscles": [
+        "obliques"
+      ],
+      "secondary_muscles": [
+        "rectus_abdominis",
+        "hip_flexors"
+      ]
+    },
+    {
+      "id": "pallof-press",
+      "name": "Pallof Press",
+      "category": "isolation",
+      "pattern": "core",
+      "equipment": "cable",
+      "aliases": [
+        "pallof press",
+        "anti rotation press"
+      ],
+      "primary_muscles": [
+        "obliques",
+        "transverse_abdominis"
+      ],
+      "secondary_muscles": [
+        "rectus_abdominis",
+        "deltoid_anterior"
+      ]
+    },
+    {
+      "id": "dead-bug",
+      "name": "Dead Bug",
+      "category": "isolation",
+      "pattern": "core",
+      "equipment": "bodyweight",
+      "aliases": [
+        "dead bug"
+      ],
+      "primary_muscles": [
+        "transverse_abdominis",
+        "rectus_abdominis"
+      ],
+      "secondary_muscles": [
+        "hip_flexors",
+        "obliques"
+      ]
+    },
+    {
+      "id": "standing-calf-raise",
+      "name": "Standing Calf Raise",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "machine",
+      "aliases": [
+        "calf raise",
+        "standing calf raise"
+      ],
+      "primary_muscles": [
+        "gastrocnemius"
+      ],
+      "secondary_muscles": [
+        "soleus"
+      ]
+    },
+    {
+      "id": "seated-calf-raise",
+      "name": "Seated Calf Raise",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "machine",
+      "aliases": [
+        "seated calf raise"
+      ],
+      "primary_muscles": [
+        "soleus"
+      ],
+      "secondary_muscles": [
+        "gastrocnemius"
+      ]
+    },
+    {
+      "id": "tibialis-raise",
+      "name": "Tibialis Raise",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "bodyweight",
+      "aliases": [
+        "tibialis raise",
+        "toe raise"
+      ],
+      "primary_muscles": [
+        "tibialis_anterior"
+      ],
+      "secondary_muscles": []
+    },
+    {
+      "id": "hip-adduction-machine",
+      "name": "Hip Adduction Machine",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "machine",
+      "aliases": [
+        "hip adduction",
+        "adductor machine"
+      ],
+      "primary_muscles": [
+        "hip_adductors"
+      ],
+      "secondary_muscles": []
+    },
+    {
+      "id": "hip-abduction-machine",
+      "name": "Hip Abduction Machine",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "machine",
+      "aliases": [
+        "hip abduction",
+        "abductor machine"
+      ],
+      "primary_muscles": [
+        "gluteus_medius"
+      ],
+      "secondary_muscles": [
+        "gluteus_maximus"
+      ]
+    },
+    {
+      "id": "cable-pull-through",
+      "name": "Cable Pull-Through",
+      "category": "compound",
+      "pattern": "hinge",
+      "equipment": "cable",
+      "aliases": [
+        "pull through",
+        "cable pull through"
+      ],
+      "primary_muscles": [
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "hamstrings",
+        "erector_spinae"
+      ]
+    },
+    {
+      "id": "power-clean",
+      "name": "Power Clean",
+      "category": "compound",
+      "pattern": "hinge",
+      "equipment": "barbell",
+      "aliases": [
+        "power clean",
+        "clean"
+      ],
+      "primary_muscles": [
+        "gluteus_maximus",
+        "hamstrings",
+        "trapezius_upper"
+      ],
+      "secondary_muscles": [
+        "quadriceps",
+        "erector_spinae",
+        "deltoid_anterior",
+        "gastrocnemius",
+        "forearm_flexors"
+      ]
+    },
+    {
+      "id": "sled-push",
+      "name": "Sled Push",
+      "category": "compound",
+      "pattern": "carry",
+      "equipment": "machine",
+      "aliases": [
+        "sled push",
+        "prowler push"
+      ],
+      "primary_muscles": [
+        "quadriceps",
+        "gluteus_maximus"
+      ],
+      "secondary_muscles": [
+        "gastrocnemius",
+        "soleus",
+        "hamstrings",
+        "transverse_abdominis"
+      ]
+    },
+    {
+      "id": "neck-curl",
+      "name": "Neck Curl",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "bodyweight",
+      "aliases": [
+        "neck curl",
+        "neck flexion",
+        "plate neck curl"
+      ],
+      "primary_muscles": [
+        "neck"
+      ],
+      "secondary_muscles": []
+    },
+    {
+      "id": "neck-extension",
+      "name": "Neck Extension",
+      "category": "isolation",
+      "pattern": "isolation",
+      "equipment": "bodyweight",
+      "aliases": [
+        "neck extension",
+        "neck harness",
+        "reverse neck curl"
+      ],
+      "primary_muscles": [
+        "neck"
+      ],
+      "secondary_muscles": [
+        "trapezius_upper"
+      ]
+    }
   ]
 }

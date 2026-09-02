@@ -31,7 +31,8 @@ insert into public.muscles (id, name, muscle_group, body_view, bilateral, extern
   ('hip_flexors', 'Hip Flexors', 'legs', 'front', true, '{"biodigital":[]}'::jsonb),
   ('gastrocnemius', 'Calves (Gastroc)', 'legs', 'back', true, '{"biodigital":[]}'::jsonb),
   ('soleus', 'Calves (Soleus)', 'legs', 'back', true, '{"biodigital":[]}'::jsonb),
-  ('tibialis_anterior', 'Tibialis Anterior', 'legs', 'front', true, '{"biodigital":[]}'::jsonb)
+  ('tibialis_anterior', 'Tibialis Anterior', 'legs', 'front', true, '{"biodigital":[]}'::jsonb),
+  ('neck', 'Neck', 'neck', 'both', true, '{"biodigital":[]}'::jsonb)
 on conflict (id) do update set name = excluded.name, muscle_group = excluded.muscle_group, body_view = excluded.body_view, bilateral = excluded.bilateral, external_ids = excluded.external_ids;
 
 insert into public.exercises (id, name, category, pattern, equipment, aliases, is_global) values
@@ -130,7 +131,9 @@ insert into public.exercises (id, name, category, pattern, equipment, aliases, i
   ('hip-abduction-machine', 'Hip Abduction Machine', 'isolation', 'isolation', 'machine', array['hip abduction', 'abductor machine']::text[], true),
   ('cable-pull-through', 'Cable Pull-Through', 'compound', 'hinge', 'cable', array['pull through', 'cable pull through']::text[], true),
   ('power-clean', 'Power Clean', 'compound', 'hinge', 'barbell', array['power clean', 'clean']::text[], true),
-  ('sled-push', 'Sled Push', 'compound', 'carry', 'machine', array['sled push', 'prowler push']::text[], true)
+  ('sled-push', 'Sled Push', 'compound', 'carry', 'machine', array['sled push', 'prowler push']::text[], true),
+  ('neck-curl', 'Neck Curl', 'isolation', 'isolation', 'bodyweight', array['neck curl', 'neck flexion', 'plate neck curl']::text[], true),
+  ('neck-extension', 'Neck Extension', 'isolation', 'isolation', 'bodyweight', array['neck extension', 'neck harness', 'reverse neck curl']::text[], true)
 on conflict (id) do update set name = excluded.name, category = excluded.category, pattern = excluded.pattern, equipment = excluded.equipment, aliases = excluded.aliases;
 
 delete from public.exercise_muscles where exercise_id in (select id from public.exercises where is_global);
@@ -432,9 +435,11 @@ insert into public.exercise_muscles (exercise_id, muscle_id, role) values
   ('barbell-shrug', 'trapezius_mid', 'secondary'),
   ('barbell-shrug', 'forearm_flexors', 'secondary'),
   ('barbell-shrug', 'rhomboids', 'secondary'),
+  ('barbell-shrug', 'neck', 'secondary'),
   ('dumbbell-shrug', 'trapezius_upper', 'primary'),
   ('dumbbell-shrug', 'trapezius_mid', 'secondary'),
   ('dumbbell-shrug', 'forearm_flexors', 'secondary'),
+  ('dumbbell-shrug', 'neck', 'secondary'),
   ('cable-external-rotation', 'rotator_cuff', 'primary'),
   ('cable-external-rotation', 'deltoid_posterior', 'secondary'),
   ('barbell-curl', 'biceps_brachii', 'primary'),
@@ -540,4 +545,7 @@ insert into public.exercise_muscles (exercise_id, muscle_id, role) values
   ('sled-push', 'gastrocnemius', 'secondary'),
   ('sled-push', 'soleus', 'secondary'),
   ('sled-push', 'hamstrings', 'secondary'),
-  ('sled-push', 'transverse_abdominis', 'secondary');
+  ('sled-push', 'transverse_abdominis', 'secondary'),
+  ('neck-curl', 'neck', 'primary'),
+  ('neck-extension', 'neck', 'primary'),
+  ('neck-extension', 'trapezius_upper', 'secondary');

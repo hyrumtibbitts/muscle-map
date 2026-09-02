@@ -1,6 +1,6 @@
 // Types that mirror supabase/migrations/0001_init.sql.
 
-export type MuscleGroup = "chest" | "back" | "shoulders" | "arms" | "core" | "legs";
+export type MuscleGroup = "chest" | "back" | "shoulders" | "arms" | "core" | "legs" | "neck";
 export type BodyView = "front" | "back" | "both";
 
 export interface Muscle {

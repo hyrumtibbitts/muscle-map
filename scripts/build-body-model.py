@@ -7,7 +7,7 @@ Input (not in this repo, see README "Body model"):
   skeleton.glb  201 bone meshes
 
 Output: one glb with
-  zone_<muscle_id>  x31  merged, decimated, tappable
+  zone_<muscle_id>  x32  merged, decimated, tappable
   filler            neck / hand / foot / intercostal muscles, not tappable
   skeleton          all bones, one mesh
 
@@ -66,12 +66,16 @@ ZONES = {
     "gastrocnemius": [r"head of gastrocnemius$", r"^plantaris$"],
     "soleus": [r"^soleus$", r"^tibialis posterior$", r"^flexor digitorum longus$", r"^flexor hallucis longus$", r"^popliteus$"],
     "tibialis_anterior": [r"^tibialis anterior$", r"^extensor digitorum longus$", r"^extensor hallucis longus$", r"^fibularis"],
+    "neck": [
+        r"^sternocleidomastoid$", r"^scalenus", r"^splenius", r"^levator scapulae$", r"^semispinalis capitis$",
+        r"^longissimus capitis$", r"^semispinalis cervicis$", r"^longus capitis$", r"^longus colli$", r"part of longus colli$",
+        r"^omohyoid$", r"^sternohyoid$", r"^sternothyroid$", r"^thyrohyoid$",
+    ],
 }
 
 # Not tappable, drawn neutral so the body is not hollow.
 FILLER = [
-    r"^sternocleidomastoid$", r"^scalenus", r"^splenius", r"^levator scapulae$", r"^semispinalis capitis$", r"^longissimus capitis$",
-    r"^omohyoid$", r"^sternohyoid$", r"^sternothyroid$", r"^thyrohyoid$", r"^external intercostal muscle$",
+    r"^external intercostal muscle$",
     r"^pectoralis minor$", r"^subclavius$", r"^serratus posterior",
     r"of hand$", r"of foot$", r"^abductor hallucis$", r"^abductor pollicis brevis$", r"^opponens", r"^flexor digitorum brevis$",
     r"^flexor hallucis brevis$", r"head of flexor hallucis brevis$", r"head of adductor (hallucis|pollicis)$",
@@ -179,7 +183,7 @@ def main():
         if z == "filler":
             target = FILLER_FACES
         else:
-            target = int(np.clip(before / zone_face_total * 31 * ZONE_FACES_MAX * 0.6, ZONE_FACES_MIN, ZONE_FACES_MAX))
+            target = int(np.clip(before / zone_face_total * 32 * ZONE_FACES_MAX * 0.6, ZONE_FACES_MIN, ZONE_FACES_MAX))
         m = decimate(m, target)
         m.apply_transform(XF)
         name = z if z == "filler" else f"zone_{z}"

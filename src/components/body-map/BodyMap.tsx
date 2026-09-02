@@ -1,8 +1,9 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Suspense, useEffect, useMemo, useRef } from "react";
+import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import * as THREE from "three";
 import type { MuscleStatusOnDate } from "@/lib/types";
 import { ZONE_COLORS, zoneState } from "./status-colors";
@@ -108,9 +109,38 @@ function Model({ statuses, selectedId, onSelect, view }: Omit<BodyMapProps, "cla
   );
 }
 
+export interface ViewApi {
+  zoom: (factor: number) => void;
+  reset: () => void;
+}
+
+/** Exposes zoom and reset to buttons that live outside the Canvas. */
+function ViewController({ apiRef, controlsRef }: { apiRef: React.MutableRefObject<ViewApi | null>; controlsRef: React.RefObject<OrbitControlsImpl | null> }) {
+  const { camera } = useThree();
+  useEffect(() => {
+    apiRef.current = {
+      zoom: (factor) => {
+        const c = controlsRef.current;
+        if (!c) return;
+        const offset = camera.position.clone().sub(c.target);
+        const next = Math.min(Math.max(offset.length() * factor, c.minDistance), c.maxDistance);
+        camera.position.copy(c.target).add(offset.setLength(next));
+        c.update();
+      },
+      reset: () => controlsRef.current?.reset(),
+    };
+    return () => {
+      apiRef.current = null;
+    };
+  }, [apiRef, controlsRef, camera]);
+  return null;
+}
+
 export default function BodyMap({ statuses, selectedId, onSelect, view, className }: BodyMapProps) {
+  const apiRef = useRef<ViewApi | null>(null);
+  const controlsRef = useRef<OrbitControlsImpl | null>(null);
   return (
-    <div className={className}>
+    <div className={`relative ${className ?? ""}`}>
       <Canvas
         camera={{ position: [0, 0, CAMERA_DISTANCE], fov: 35, near: 0.05, far: 50 }}
         dpr={[1, 2]}
@@ -122,8 +152,26 @@ export default function BodyMap({ statuses, selectedId, onSelect, view, classNam
         <Suspense fallback={null}>
           <Model statuses={statuses} selectedId={selectedId} onSelect={onSelect} view={view} />
         </Suspense>
-        <OrbitControls enablePan={false} minDistance={1.2} maxDistance={5} target={[0, 0, 0]} />
+        <OrbitControls ref={controlsRef} enablePan={false} minDistance={0.6} maxDistance={5} target={[0, 0, 0]} />
+        <ViewController apiRef={apiRef} controlsRef={controlsRef} />
       </Canvas>
+
+      <div className="absolute right-4 top-1/2 flex -translate-y-1/2 flex-col overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900/90 text-lg leading-none shadow-lg backdrop-blur">
+        <button onClick={() => apiRef.current?.zoom(0.8)} aria-label="Zoom in" className="h-10 w-10 hover:bg-zinc-800">
+          +
+        </button>
+        <button onClick={() => apiRef.current?.zoom(1.25)} aria-label="Zoom out" className="h-10 w-10 border-t border-zinc-800 hover:bg-zinc-800">
+          −
+        </button>
+        <button onClick={() => apiRef.current?.reset()} aria-label="Reset view" className="h-10 w-10 border-t border-zinc-800 text-sm hover:bg-zinc-800">
+          ⟲
+        </button>
+      </div>
+      {!selectedId && (
+        <p className="pointer-events-none absolute bottom-4 left-4 text-[11px] text-zinc-500">
+          Drag to rotate · Scroll or pinch to zoom · Tap a muscle
+        </p>
+      )}
     </div>
   );
 }

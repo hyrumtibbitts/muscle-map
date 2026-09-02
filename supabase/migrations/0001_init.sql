@@ -11,7 +11,7 @@ create type public.muscle_status_source as enum ('auto', 'manual', 'carry_forwar
 create table public.muscles (
   id            text primary key,                     -- e.g. 'pec_upper'
   name          text not null,
-  muscle_group  text not null,                        -- chest | back | shoulders | arms | core | legs
+  muscle_group  text not null,                        -- chest | back | shoulders | arms | core | legs | neck
   body_view     text not null check (body_view in ('front', 'back', 'both')),
   bilateral     boolean not null default true,
   external_ids  jsonb not null default '{}'::jsonb     -- e.g. {"biodigital": ["..."]}
