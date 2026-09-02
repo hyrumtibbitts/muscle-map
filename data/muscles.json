@@ -1,0 +1,316 @@
+{
+  "$schema_version": 1,
+  "description": "Canonical muscle zones for the body map. Each id is a tap zone in the low-poly model.",
+  "muscles": [
+    {
+      "id": "pec_upper",
+      "name": "Upper Chest",
+      "group": "chest",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "pec_lower",
+      "name": "Mid / Lower Chest",
+      "group": "chest",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "serratus_anterior",
+      "name": "Serratus Anterior",
+      "group": "chest",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "deltoid_anterior",
+      "name": "Front Delt",
+      "group": "shoulders",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "deltoid_lateral",
+      "name": "Side Delt",
+      "group": "shoulders",
+      "view": "both",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "deltoid_posterior",
+      "name": "Rear Delt",
+      "group": "shoulders",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "rotator_cuff",
+      "name": "Rotator Cuff",
+      "group": "shoulders",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "biceps_brachii",
+      "name": "Biceps",
+      "group": "arms",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "brachialis",
+      "name": "Brachialis",
+      "group": "arms",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "triceps_brachii",
+      "name": "Triceps",
+      "group": "arms",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "forearm_flexors",
+      "name": "Forearm Flexors",
+      "group": "arms",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "forearm_extensors",
+      "name": "Forearm Extensors",
+      "group": "arms",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "rectus_abdominis",
+      "name": "Abs",
+      "group": "core",
+      "view": "front",
+      "bilateral": false,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "obliques",
+      "name": "Obliques",
+      "group": "core",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "transverse_abdominis",
+      "name": "Deep Core (TVA)",
+      "group": "core",
+      "view": "front",
+      "bilateral": false,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "erector_spinae",
+      "name": "Lower Back",
+      "group": "core",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "latissimus_dorsi",
+      "name": "Lats",
+      "group": "back",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "teres_major",
+      "name": "Teres Major",
+      "group": "back",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "trapezius_upper",
+      "name": "Upper Traps",
+      "group": "back",
+      "view": "both",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "trapezius_mid",
+      "name": "Mid Traps",
+      "group": "back",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "trapezius_lower",
+      "name": "Lower Traps",
+      "group": "back",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "rhomboids",
+      "name": "Rhomboids",
+      "group": "back",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "gluteus_maximus",
+      "name": "Glutes",
+      "group": "legs",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "gluteus_medius",
+      "name": "Glute Medius",
+      "group": "legs",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "quadriceps",
+      "name": "Quads",
+      "group": "legs",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "hamstrings",
+      "name": "Hamstrings",
+      "group": "legs",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "hip_adductors",
+      "name": "Adductors",
+      "group": "legs",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "hip_flexors",
+      "name": "Hip Flexors",
+      "group": "legs",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "gastrocnemius",
+      "name": "Calves (Gastroc)",
+      "group": "legs",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "soleus",
+      "name": "Calves (Soleus)",
+      "group": "legs",
+      "view": "back",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    },
+    {
+      "id": "tibialis_anterior",
+      "name": "Tibialis Anterior",
+      "group": "legs",
+      "view": "front",
+      "bilateral": true,
+      "external_ids": {
+        "biodigital": []
+      }
+    }
+  ]
+}
