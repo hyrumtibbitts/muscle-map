@@ -106,6 +106,24 @@ def classify(name: str):
     return None
 
 
+def clip_oblique_sheet(obliques, rectus):
+    """The oblique meshes include the aponeurosis, a flat tendon sheet that covers the
+    rectus abdominis. Remove the part of the sheet in front of the rectus so the abs
+    are visible and tappable. Source frame: anterior is -Y, x is left/right."""
+    rv = np.vstack([g.vertices for g in rectus])
+    edge = np.abs(rv[:, 0]).max()
+    front_limit = rv[:, 1].max() + 45  # a little behind the rectus, so the sheet over the pubis goes too
+    out = []
+    for g in obliques:
+        c = g.triangles_center
+        drop = (np.abs(c[:, 0]) < edge * 0.92) & (c[:, 1] < front_limit)
+        g = g.copy()
+        g.update_faces(~drop)
+        g.remove_unreferenced_vertices()
+        out.append(g)
+    return out
+
+
 def merge(meshes):
     return trimesh.util.concatenate(meshes) if len(meshes) > 1 else meshes[0].copy()
 
@@ -158,6 +176,9 @@ def main():
             dropped.append(name)
             continue
         groups[z].append(g)
+
+    if groups["obliques"] and groups["rectus_abdominis"]:
+        groups["obliques"] = clip_oblique_sheet(groups["obliques"], groups["rectus_abdominis"])
 
     # Front direction: anterior muscles have a smaller (more negative) source Y than spinal muscles.
     ant = np.mean([g.centroid[1] for g in groups["rectus_abdominis"]])
