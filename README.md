@@ -35,7 +35,7 @@ Open http://localhost:3000. With no Supabase keys set, data is stored in the bro
 | `src/lib/data/` | Loads the JSON and matches exercise names to ids. |
 | `src/lib/repo/` | Data access. `LocalRepo` (browser storage) now, `SupabaseRepo` later. |
 | `src/components/body-map/` | React Three Fiber body map. Zone color = status. Tap a zone to select it. |
-| `public/models/body.glb` | 32 tappable muscle zones + neutral filler + skeleton. ~1.5 MB, meshopt-compressed. |
+| `public/models/body.glb` | 32 tappable muscle zones + neutral filler + skeleton. ~2.4 MB, meshopt-compressed. |
 | `scripts/build-body-model.py` | Rebuilds `body.glb` from the source meshes (see Body model). |
 
 ## Database tables

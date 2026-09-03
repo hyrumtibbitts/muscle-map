@@ -48,8 +48,7 @@ ZONES = {
     "obliques": [r"^external oblique$", r"^internal oblique$"],
     "transverse_abdominis": [r"^transversus abdominis$"],
     "erector_spinae": [
-        r"^iliocostalis", r"^longissimus thoracis$", r"^longissimus cervicis$", r"^spinalis", r"^multifidus",
-        r"^semispinalis thoracis$", r"^rotatores$", r"^quadratus lumborum$",
+        r"^iliocostalis", r"^longissimus thoracis$", r"^longissimus cervicis$", r"^spinalis", r"^multifidus lumborum$",
     ],
     "latissimus_dorsi": [r"^latissimus dorsi$"],
     "teres_major": [r"^teres major$"],
@@ -59,10 +58,10 @@ ZONES = {
     "rhomboids": [r"^rhomboid major$", r"^rhomboid minor$"],
     "gluteus_maximus": [r"^gluteus maximus$"],
     "gluteus_medius": [r"^gluteus medius$", r"^gluteus minimus$"],
-    "quadriceps": [r"^rectus femoris$", r"^vastus"],
+    "quadriceps": [r"^rectus femoris$", r"^vastus", r"^sartorius$"],
     "hamstrings": [r"head of biceps femoris$", r"^semimembranosus$", r"^semitendinosus$"],
     "hip_adductors": [r"^adductor (longus|brevis|magnus|minimus)$", r"^gracilis$", r"^pectineus$"],
-    "hip_flexors": [r"^iliacus$", r"^psoas major$", r"^sartorius$"],
+    "hip_flexors": [r"^iliacus$", r"^psoas major$"],
     "gastrocnemius": [r"head of gastrocnemius$", r"^plantaris$"],
     "soleus": [r"^soleus$", r"^tibialis posterior$", r"^flexor digitorum longus$", r"^flexor hallucis longus$", r"^popliteus$"],
     "tibialis_anterior": [r"^tibialis anterior$", r"^extensor digitorum longus$", r"^extensor hallucis longus$", r"^fibularis"],
@@ -80,14 +79,14 @@ FILLER = [
     r"of hand$", r"of foot$", r"^abductor hallucis$", r"^abductor pollicis brevis$", r"^opponens", r"^flexor digitorum brevis$",
     r"^flexor hallucis brevis$", r"head of flexor hallucis brevis$", r"head of adductor (hallucis|pollicis)$",
     r"^flexor pollicis brevis$", r"head of flexor pollicis brevis$", r"^extensor hallucis brevis$", r"^flexor accessorius$",
-    r"lumbrical", r"interosse", r"^piriformis$", r"^gemellus", r"^obturator", r"^quadratus femoris$",
+    r"lumbrical", r"interosse",
 ]
 
 # Face budget after decimation.
-ZONE_FACES_MAX = 9000
-ZONE_FACES_MIN = 1500
-FILLER_FACES = 30000
-SKELETON_FACES = 70000
+ZONE_FACES_MAX = 22000
+ZONE_FACES_MIN = 3000
+FILLER_FACES = 45000
+SKELETON_FACES = 90000
 
 
 def base_name(n: str) -> str:
@@ -109,6 +108,14 @@ def classify(name: str):
 
 def merge(meshes):
     return trimesh.util.concatenate(meshes) if len(meshes) > 1 else meshes[0].copy()
+
+
+def finish(mesh: trimesh.Trimesh) -> trimesh.Trimesh:
+    """Weld shared vertices so normals average across faces (smooth shading)."""
+    mesh.merge_vertices(merge_tex=True, merge_norm=True)
+    mesh.remove_unreferenced_vertices()
+    _ = mesh.vertex_normals  # compute and cache, exported with include_normals
+    return mesh
 
 
 def decimate(mesh: trimesh.Trimesh, target_faces: int) -> trimesh.Trimesh:
@@ -183,9 +190,10 @@ def main():
         if z == "filler":
             target = FILLER_FACES
         else:
-            target = int(np.clip(before / zone_face_total * 32 * ZONE_FACES_MAX * 0.6, ZONE_FACES_MIN, ZONE_FACES_MAX))
+            target = int(np.clip(before, ZONE_FACES_MIN, ZONE_FACES_MAX))
         m = decimate(m, target)
         m.apply_transform(XF)
+        m = finish(m)
         name = z if z == "filler" else f"zone_{z}"
         scene.add_geometry(m, node_name=name, geom_name=name)
         report[z] = {"meshes": len(gs), "faces_in": before, "faces_out": len(m.faces)}
@@ -193,11 +201,12 @@ def main():
 
     sk = decimate(merge(list(skeleton.values())), SKELETON_FACES)
     sk.apply_transform(XF)
+    sk = finish(sk)
     scene.add_geometry(sk, node_name="skeleton", geom_name="skeleton")
     total += len(sk.faces)
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    scene.export(OUT)
+    scene.export(OUT, include_normals=True)
 
     print(f"front = +Z (anterior was {'-Y' if anterior_is_neg_y else '+Y'} in source)")
     print(f"height {(hi - lo)[1] / 1000:.3f} m, width {(hi - lo)[0] / 1000:.3f} m")
